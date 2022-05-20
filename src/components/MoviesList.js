@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
-
+import { useDispatch, useSelector } from "react-redux";
+import { LoadMovie } from "../redux/action";
 //again some style sshould be imported from another files...
 const Movie = styled.div`
   overflow-x: auto;
@@ -34,11 +35,23 @@ const Img = styled.img`
   height: 300px;
 `;
 const MoviesList = ({ data }) => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    const fetchMovies = () => {
+      dispatch(LoadMovie);
+    };
+    fetchMovies();
+  }, [dispatch]);
+
+  //destruct state from reducer root
+  const state = useSelector((state) => ({ ...state.app }));
+
   return (
     <>
       <Movie>
-        {data &&
-          data.map((item, idx) => (
+        {!state.loading &&
+          state.movies.map((item, idx) => (
             <Row key={idx}>
               <Card>
                 <h6>{item.Title}</h6>
