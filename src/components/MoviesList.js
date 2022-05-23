@@ -34,7 +34,7 @@ const Img = styled.img`
   background-size: cover;
   height: 300px;
 `;
-const MoviesList = ({ data }) => {
+const MoviesList = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {

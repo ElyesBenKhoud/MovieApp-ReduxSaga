@@ -1,9 +1,13 @@
-export const LoadMovie = (movies) => ({
-  type: "LOAD_MOVIE",
-  payload: movies,
+export const LoadMovie = () => ({
+  type: "LOAD_MOVIE_REQUESTED",
 });
 
-export const LoadMovieFail = (error) => ({
+export const LoadMovieSuccess = (movies) => ({
+  type: "LOAD_MOVIE_SUCCESS",
+  movies,
+});
+
+export const LoadMovieFail = (message) => ({
   type: "LOAD_MOVIE_FAIL",
-  payload: error,
+  message,
 });
