@@ -4,10 +4,10 @@ export const LoadMovie = () => ({
 
 export const LoadMovieSuccess = (movies) => ({
   type: "LOAD_MOVIE_SUCCESS",
-  movies,
+  payload: movies,
 });
 
 export const LoadMovieFail = (message) => ({
   type: "LOAD_MOVIE_FAIL",
-  message,
+  payload: message,
 });

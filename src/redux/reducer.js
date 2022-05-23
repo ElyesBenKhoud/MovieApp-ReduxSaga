@@ -16,14 +16,14 @@ const MovieReducer = (state = initial_state, action) => {
       return {
         ...state,
         loading: false,
-        movies: action.movies,
+        movies: action.payload,
       };
     }
     case "LOAD_MOVIE_FAIL": {
       return {
         ...state,
         loading: false,
-        error: action.message,
+        error: action.payload,
       };
     }
 
