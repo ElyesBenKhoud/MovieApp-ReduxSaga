@@ -38,14 +38,13 @@ const MoviesList = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    const fetchMovies = () => {
-      dispatch(LoadMovie);
-    };
-    fetchMovies();
+    dispatch(LoadMovie);
   }, [dispatch]);
 
   //destruct state from reducer root
   const state = useSelector((state) => ({ ...state.app }));
+
+  console.log(state);
 
   return (
     <>

@@ -1,10 +1,12 @@
 const initial_state = {
   movies: [],
-  error: null,
   loading: true,
+  error: null,
 };
 
 const MovieReducer = (state = initial_state, action) => {
+  const { movies, message } = action;
+
   switch (action.type) {
     case "LOAD_MOVIE_REQUESTED": {
       return {
@@ -16,14 +18,14 @@ const MovieReducer = (state = initial_state, action) => {
       return {
         ...state,
         loading: false,
-        movies: action.payload,
+        movies: movies,
       };
     }
     case "LOAD_MOVIE_FAIL": {
       return {
         ...state,
         loading: false,
-        error: action.payload,
+        error: message,
       };
     }
 
