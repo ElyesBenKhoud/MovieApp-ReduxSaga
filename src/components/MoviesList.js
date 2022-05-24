@@ -38,7 +38,7 @@ const MoviesList = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(LoadMovie);
+    dispatch(LoadMovie());
   }, [dispatch]);
 
   //destruct state from reducer root
@@ -49,7 +49,9 @@ const MoviesList = () => {
   return (
     <>
       <Movie>
-        {!state.loading &&
+        {state.loading ? (
+          <h6>loading </h6>
+        ) : (
           state.movies.map((item, idx) => (
             <Row key={idx}>
               <Card>
@@ -57,7 +59,8 @@ const MoviesList = () => {
                 <Img src={item.Poster} alt={item.Title} />
               </Card>
             </Row>
-          ))}
+          ))
+        )}
       </Movie>
     </>
   );

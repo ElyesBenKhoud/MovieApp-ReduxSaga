@@ -1,3 +1,9 @@
+import {
+  LOAD_MOVIE_REQUESTED,
+  LOAD_MOVIE_SUCCESS,
+  LOAD_MOVIE_FAIL,
+} from "./types";
+
 const initial_state = {
   movies: [],
   loading: true,
@@ -5,23 +11,23 @@ const initial_state = {
 };
 
 const MovieReducer = (state = initial_state, action) => {
-  const { movies, message } = action;
-
   switch (action.type) {
-    case "LOAD_MOVIE_REQUESTED": {
+    case LOAD_MOVIE_REQUESTED: {
       return {
         ...state,
         loading: true,
       };
     }
-    case "LOAD_MOVIE_SUCCESS": {
+    case LOAD_MOVIE_SUCCESS: {
+      const { movies } = action;
       return {
         ...state,
-        loading: false,
         movies: movies,
+        loading: false,
       };
     }
-    case "LOAD_MOVIE_FAIL": {
+    case LOAD_MOVIE_FAIL: {
+      const { message } = action;
       return {
         ...state,
         loading: false,
