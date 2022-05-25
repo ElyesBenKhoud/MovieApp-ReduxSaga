@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import styled from "styled-components";
 import { useDispatch, useSelector } from "react-redux";
 import { LoadMovie } from "../redux/SagaMovies/action";
+import { LoadOtherMovies } from "../redux/OtherMovies/action";
 //again some style sshould be imported from another files...
 const Movie = styled.div`
   overflow-x: auto;
@@ -39,20 +40,38 @@ const MoviesList = () => {
 
   useEffect(() => {
     dispatch(LoadMovie());
+    dispatch(LoadOtherMovies());
   }, [dispatch]);
 
   //destruct state from reducer root
   const state = useSelector((state) => ({ ...state.app }));
-
+  const state2 = useSelector((state) => ({ ...state.app2 }));
   // console.log(state);
 
   return (
     <>
+      <h2> First Saga call</h2>
       <Movie>
         {state.loading ? (
           <h6>loading </h6>
         ) : (
           state.movies.map((item, idx) => (
+            <Row key={idx}>
+              <Card>
+                <h6>{item.Title}</h6>
+                <Img src={item.Poster} alt={item.Title} />
+              </Card>
+            </Row>
+          ))
+        )}
+      </Movie>
+      <h2> Second Saga call</h2>
+
+      <Movie>
+        {state2.loading ? (
+          <h6>loading </h6>
+        ) : (
+          state2.movies.map((item, idx) => (
             <Row key={idx}>
               <Card>
                 <h6>{item.Title}</h6>
