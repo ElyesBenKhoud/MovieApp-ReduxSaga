@@ -3,7 +3,7 @@ import thunk from "redux-thunk";
 import createSagaMiddleware from "redux-saga";
 // import logger from "redux-logger";
 import rootReducer from "./rootReducer";
-import { OnLoadMovie } from "./sagas";
+import { OnLoadMovie } from "./SagaMovies/sagas";
 
 const sagaMiddleware = createSagaMiddleware();
 // const middlewares = [logger, sagaMiddleware];

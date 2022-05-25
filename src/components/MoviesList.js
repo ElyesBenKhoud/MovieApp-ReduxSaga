@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
 import { useDispatch, useSelector } from "react-redux";
-import { LoadMovie } from "../redux/action";
+import { LoadMovie } from "../redux/SagaMovies/action";
 //again some style sshould be imported from another files...
 const Movie = styled.div`
   overflow-x: auto;

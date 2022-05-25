@@ -1,7 +1,7 @@
 import { takeLatest, put, call } from "redux-saga/effects";
 
 //call the api
-import { fetchMovies } from "./api";
+import { fetchMovies } from "../api";
 import { LOAD_MOVIE_REQUESTED } from "./types";
 //import actions
 import { LoadMovieSuccess, LoadMovieFail } from "./action";
