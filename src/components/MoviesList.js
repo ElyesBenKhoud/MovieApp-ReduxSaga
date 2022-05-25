@@ -44,7 +44,7 @@ const MoviesList = () => {
   //destruct state from reducer root
   const state = useSelector((state) => ({ ...state.app }));
 
-  console.log(state);
+  // console.log(state);
 
   return (
     <>

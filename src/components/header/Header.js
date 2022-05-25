@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import Search from "./Search";
 
 //style should be imported from another file
 const HeaderWrapper = styled.header`
@@ -47,9 +48,6 @@ const HeaderLogoButton = styled.button`
   outline: none;
   cursor: pointer;
 `;
-const Features = styled.h6`
-  color: white;
-`;
 
 const Header = () => {
   return (
@@ -61,7 +59,7 @@ const Header = () => {
             <HeaderText>Movies App</HeaderText>
           </HeaderLogoButton>
         </HeaderLogoWrapper>
-        <Features> Some feature should be here like search or filters</Features>
+        <Search />
       </HeaderWrapper>
     </>
   );
