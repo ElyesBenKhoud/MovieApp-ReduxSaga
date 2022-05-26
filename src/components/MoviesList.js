@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { useDispatch, useSelector } from "react-redux";
 import { LoadMovie } from "../redux/SagaMovies/action";
 import { LoadOtherMovies } from "../redux/OtherMovies/action";
-//again some style sshould be imported from another files...
+//again some style should be imported from another files...
 const Movie = styled.div`
   overflow-x: auto;
   flex-wrap: nowrap;
@@ -53,7 +53,7 @@ const MoviesList = () => {
       <h2> First Saga call</h2>
       <Movie>
         {state.loading ? (
-          <h6>loading </h6>
+          <h6>Data is Loading ... </h6>
         ) : (
           state.movies.map((item, idx) => (
             <Row key={idx}>
@@ -69,7 +69,7 @@ const MoviesList = () => {
 
       <Movie>
         {state2.loading ? (
-          <h6>loading </h6>
+          <h6>Data is Loading ... </h6>
         ) : (
           state2.movies.map((item, idx) => (
             <Row key={idx}>

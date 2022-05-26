@@ -7,6 +7,7 @@ const Search = () => {
     e.preventDefault();
     console.log(search);
   };
+
   return (
     <div className="search-container">
       <form onSubmit={onSubmitSearch}>
