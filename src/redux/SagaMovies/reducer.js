@@ -4,11 +4,13 @@ import {
   LOAD_MOVIE_FAIL,
 } from "./types";
 
-const initial_state = {
+export const initial_state = {
   movies: [],
   loading: true,
   error: null,
 };
+
+export const movies = initial_state.movies;
 
 const MovieReducer = (state = initial_state, action) => {
   switch (action.type) {
