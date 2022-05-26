@@ -7,7 +7,8 @@ import { initial_state } from "../SagaMovies/reducer";
 export function* LoadSearchedMovieAsync() {
   try {
     //get the array of movies from movie reducer map through it and store it into variable
-    const movies = yield initial_state.movies.map((movie) => movie);
+    // const movies = yield initial_state.movies.map((movie) => movie);
+    const movies = yield initial_state.movies;
     const response = yield call(movies);
     yield put(GetSearchMovie(response));
   } catch (error) {
