@@ -47,40 +47,38 @@ const MoviesList = () => {
   const state = useSelector((state) => ({ ...state.app }));
   const state2 = useSelector((state) => ({ ...state.app2 }));
   // console.log(state);
+  const SagasMovies = state.loading ? (
+    <h6>Data is Loading ... </h6>
+  ) : (
+    state.movies.map((item, idx) => (
+      <Row key={idx}>
+        <Card>
+          <h6>{item.Title}</h6>
+          <Img src={item.Poster} alt={item.Title} />
+        </Card>
+      </Row>
+    ))
+  );
+
+  const SagasOtherMovies = state2.loading ? (
+    <h6>Data is Loading ... </h6>
+  ) : (
+    state2.movies.map((item, idx) => (
+      <Row key={idx}>
+        <Card>
+          <h6>{item.Title}</h6>
+          <Img src={item.Poster} alt={item.Title} />
+        </Card>
+      </Row>
+    ))
+  );
 
   return (
     <>
       <h2> First Saga call</h2>
-      <Movie>
-        {state.loading ? (
-          <h6>Data is Loading ... </h6>
-        ) : (
-          state.movies.map((item, idx) => (
-            <Row key={idx}>
-              <Card>
-                <h6>{item.Title}</h6>
-                <Img src={item.Poster} alt={item.Title} />
-              </Card>
-            </Row>
-          ))
-        )}
-      </Movie>
+      <Movie>{SagasMovies}</Movie>
       <h2> Second Saga call</h2>
-
-      <Movie>
-        {state2.loading ? (
-          <h6>Data is Loading ... </h6>
-        ) : (
-          state2.movies.map((item, idx) => (
-            <Row key={idx}>
-              <Card>
-                <h6>{item.Title}</h6>
-                <Img src={item.Poster} alt={item.Title} />
-              </Card>
-            </Row>
-          ))
-        )}
-      </Movie>
+      <Movie>{SagasOtherMovies}</Movie>
     </>
   );
 };
