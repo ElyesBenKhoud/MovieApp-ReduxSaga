@@ -1,11 +1,22 @@
 import React from "react";
 import styled from "styled-components";
 
+const Movie = styled.div`
+  overflow-x: auto;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+`;
+
 const Row = styled.div`
-  float: left;
-  width: 15%;
+  width: 25%;
   @media screen and (max-width: 1175px) {
-    width: 100%;
+    width: 70%;
     display: block;
     margin-bottom: 20px;
   }
@@ -13,7 +24,7 @@ const Row = styled.div`
 
 const Card = styled.div`
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  padding: 16px;
+  padding: 6px;
   text-align: center;
   background-color: #f1f1f1;
 `;
@@ -29,15 +40,17 @@ const Img = styled.img`
 const RenderResult = ({ result }) => {
   //   console.log(result.toJS().Title);
 
+  const renderedList = (
+    <Row>
+      <Card>
+        <Img src={result.toJS().Poster} alt={result.toJS().Title} />
+      </Card>
+    </Row>
+  );
+
   return (
     <>
-      {console.log(result.toJS().Title)}
-      <Row>
-        <Card>
-          <h6>{result.toJS().Title}</h6>
-          <Img src={result.toJS().Poster} alt={result.toJS().Title} />
-        </Card>
-      </Row>
+      <Movie>{renderedList}</Movie>
     </>
   );
 };

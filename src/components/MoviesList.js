@@ -6,15 +6,21 @@ import { LoadOtherMovies } from "../redux/OtherMovies/action";
 //again some style should be imported from another files...
 const Movie = styled.div`
   overflow-x: auto;
-  flex-wrap: nowrap;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
 `;
 
 const Row = styled.div`
   float: left;
-  width: 15%;
+  width: 25%;
   @media screen and (max-width: 1175px) {
-    width: 100%;
+    width: 70%;
     display: block;
     margin-bottom: 20px;
   }
@@ -22,7 +28,7 @@ const Row = styled.div`
 
 const Card = styled.div`
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  padding: 16px;
+  padding: 6px;
   text-align: center;
   background-color: #f1f1f1;
 `;
@@ -53,7 +59,6 @@ const MoviesList = () => {
     state.movies.map((item, idx) => (
       <Row key={idx}>
         <Card>
-          <h6>{item.Title}</h6>
           <Img src={item.Poster} alt={item.Title} />
         </Card>
       </Row>
@@ -66,7 +71,6 @@ const MoviesList = () => {
     state2.movies.map((item, idx) => (
       <Row key={idx}>
         <Card>
-          <h6>{item.Title}</h6>
           <Img src={item.Poster} alt={item.Title} />
         </Card>
       </Row>
