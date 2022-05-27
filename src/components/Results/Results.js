@@ -5,7 +5,12 @@ const Results = (props) => {
   console.log(props);
 
   if (props.searchResults) {
-    return <>{renderSearchResults(props.searchResults)}</>;
+    return (
+      <>
+        <h2> Here goes the searched movies</h2>
+        {renderSearchResults(props.searchResults)}
+      </>
+    );
   }
 
   return null;

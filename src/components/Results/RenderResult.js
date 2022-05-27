@@ -4,7 +4,6 @@ import styled from "styled-components";
 const Row = styled.div`
   float: left;
   width: 15%;
-  padding: 0 10px;
   @media screen and (max-width: 1175px) {
     width: 100%;
     display: block;
@@ -24,7 +23,8 @@ const Img = styled.img`
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  height: 300px;
+  height: 100%;
+  width: 80%;
 `;
 const RenderResult = ({ result }) => {
   //   console.log(result.toJS().Title);
@@ -32,7 +32,6 @@ const RenderResult = ({ result }) => {
   return (
     <>
       {console.log(result.toJS().Title)}
-
       <Row>
         <Card>
           <h6>{result.toJS().Title}</h6>

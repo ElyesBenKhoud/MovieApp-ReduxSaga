@@ -13,7 +13,6 @@ const Movie = styled.div`
 const Row = styled.div`
   float: left;
   width: 15%;
-  padding: 0 10px;
   @media screen and (max-width: 1175px) {
     width: 100%;
     display: block;
@@ -33,7 +32,8 @@ const Img = styled.img`
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  height: 300px;
+  height: 100%;
+  width: 80%;
 `;
 const MoviesList = () => {
   const dispatch = useDispatch();
