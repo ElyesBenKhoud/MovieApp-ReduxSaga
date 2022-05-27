@@ -12,8 +12,8 @@ const Results = (props) => {
 };
 
 const renderSearchResults = (searchResults) => {
-  return searchResults.map((result) => {
-    return <RenderResult result={result} />;
+  return searchResults.map((result, key) => {
+    return <RenderResult result={result} key={key} />;
   });
 };
 
