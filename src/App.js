@@ -2,7 +2,8 @@
 // import axios from "axios";
 // import { useEffect } from "react";
 import Header from "./components/header/Header";
-import MoviesList from "./components/MoviesList";
+// import MoviesList from "./components/MoviesList";
+import Results from "./components/Results/Results";
 // const API_URL = "http://www.omdbapi.com/?s=happy&&apikey=d7b52bbd";
 
 function App() {
@@ -13,8 +14,8 @@ function App() {
   return (
     <div className="App">
       <Header />
-
-      <MoviesList />
+      <Results />
+      {/* <MoviesList /> */}
     </div>
   );
 }

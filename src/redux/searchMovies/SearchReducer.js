@@ -1,13 +1,14 @@
 import { Map, fromJS } from "immutable";
-import { ADD_SEARCH_RESULTS } from "./types";
+import { SET_SEARCH_RESULTS } from "./types";
 
 const initial_state = Map({
   searchResults: [],
 });
 
 const SearchReducer = (state = initial_state, action) => {
+//   console.log(action);
   switch (action.type) {
-    case ADD_SEARCH_RESULTS: {
+    case SET_SEARCH_RESULTS: {
       return state.merge({
         searchResults: fromJS(action.results),
       });
