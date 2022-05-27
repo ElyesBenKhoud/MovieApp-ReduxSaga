@@ -77,6 +77,7 @@ const MoviesList = () => {
     <>
       <h2> First Saga call</h2>
       <Movie>{SagasMovies}</Movie>
+      <br />
       <h2> Second Saga call</h2>
       <Movie>{SagasOtherMovies}</Movie>
     </>

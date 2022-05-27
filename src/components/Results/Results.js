@@ -19,7 +19,7 @@ const renderSearchResults = (searchResults) => {
 
 const mapStateToProps = (state) => {
   return {
-    //get bcuw of immutable JS
+    //get bcuz of immutable JS
     searchResults: state.searchReducer.get("searchResults"),
   };
 };
