@@ -1,12 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 
-const Movie = styled.div`
-  overflow-x: auto;
-  flex-wrap: nowrap;
-  box-sizing: border-box;
-`;
-
 const Row = styled.div`
   float: left;
   width: 15%;
@@ -33,24 +27,19 @@ const Img = styled.img`
   height: 300px;
 `;
 const RenderResult = ({ result }) => {
-  console.log(result.toJS());
+  //   console.log(result.toJS().Title);
 
-  //   const SagasMovies = result.toJS().map((item, idx) => (
-  //     <Row key={idx}>
-  //       <Card>
-  //         <h6>{item.Title}</h6>
-  //         <Img src={item.Poster} alt={item.Title} />
-  //       </Card>
-  //     </Row>
-  //   ));
-
-  //   return <>{result.toJS().map((item) => console.log(item.title))}</>;
   return (
-    <div>
-      {" "}
-      hello here results goes , logged just error of immutable js remain then
-      map through result and display the searched movies
-    </div>
+    <>
+      {console.log(result.toJS().Title)}
+
+      <Row>
+        <Card>
+          <h6>{result.toJS().Title}</h6>
+          <Img src={result.toJS().Poster} alt={result.toJS().Title} />
+        </Card>
+      </Row>
+    </>
   );
 };
 
