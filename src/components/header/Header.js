@@ -9,24 +9,24 @@ const HeaderWrapper = styled.header`
   flex-wrap: wrap;
   height: 90px;
   width: 100%;
-  background: #1e2028;
+  background: #96c0b7;
   @media screen and (max-width: 1183px) {
     height: 100%;
   }
   @media screen and (max-width: 865px) {
-    height: 190px;
+    height: 150px;
   }
 `;
-const HeaderText = styled.h1`
-  margin: 6px 0 0 0;
-  font-size: 26px;
-  font-weight: 300;
-  color: #f4f4f4;
-  opacity: 0.93;
-  &:hover {
-    opacity: 1;
-  }
-`;
+// const HeaderText = styled.h1`
+//   margin: 6px 0 0 0;
+//   font-size: 26px;
+//   font-weight: 300;
+//   color: #f4f4f4;
+//   opacity: 0.93;
+//   &:hover {
+//     opacity: 1;
+//   }
+// `;
 const HeaderLogoWrapper = styled.div`
   display: flex;
   align-items: center;
@@ -56,7 +56,7 @@ const Header = () => {
         <HeaderLogoWrapper>
           <HeaderLogoButton>
             {/* <HeaderLogo src="" alt="logo" /> */}
-            <HeaderText>Movies App</HeaderText>
+            {/* <HeaderText>Movies App</HeaderText> */}
           </HeaderLogoButton>
         </HeaderLogoWrapper>
         <Search />

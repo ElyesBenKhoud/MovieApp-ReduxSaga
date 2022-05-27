@@ -16,9 +16,9 @@ body{
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-color: bisque;
+    background-color: #fef6c9;
     height:100%;
-    border-radius: 50px;
+    border-radius: 10px;
     flex:0.5;
     position:relative;
     transition: flex 0.5s ease-in;
@@ -32,9 +32,9 @@ body{
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-color: rgb(232, 188, 133);
+    background-color: #fef6c9;
     height:100%;
-    border-radius: 50px;
+    border-radius: 10px;
     flex:0.5;
     position:relative;
     transition: flex 0.5s ease-in;
