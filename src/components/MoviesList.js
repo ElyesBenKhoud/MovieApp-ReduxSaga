@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { useDispatch, useSelector } from "react-redux";
 import { LoadMovie } from "../redux/SagaMovies/action";
 import { LoadOtherMovies } from "../redux/OtherMovies/action";
-import { GetSearchMovie } from "../redux/SearchSaga/action";
 //again some style should be imported from another files...
 const Movie = styled.div`
   overflow-x: auto;
@@ -42,13 +41,11 @@ const MoviesList = () => {
   useEffect(() => {
     dispatch(LoadMovie());
     dispatch(LoadOtherMovies());
-    dispatch(GetSearchMovie());
   }, [dispatch]);
 
   //destruct state from reducer root
   const state = useSelector((state) => ({ ...state.app }));
   const state2 = useSelector((state) => ({ ...state.app2 }));
-  const searchedMovies = useSelector((state) => ({ ...state.searchReducer }));
   // console.log(searchedMovies);
   const SagasMovies = state.loading ? (
     <h6>Data is Loading ... </h6>

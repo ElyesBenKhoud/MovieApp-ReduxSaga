@@ -1,22 +1,31 @@
-import React, { useState } from "react";
+import { connect } from "react-redux";
+import React from "react";
 import "./Styles.css";
-const Search = () => {
-  const [search, setSearch] = useState("");
+import { getSearchResults } from "../../redux/searchMovies/action";
 
-  const onSubmitSearch = (e) => {
-    e.preventDefault();
-    console.log(search);
+const Search = (props) => {
+  console.log(props);
+  // const GetDataTest = async (e) => {
+  //   e.preventDefault();
+  //   const url = `http://www.omdbapi.com/?s=${e.target.value}&&apikey=d7b52bbd`;
+  //   const data = await axios.get(url);
+  //   console.log(data.data.Search);
+  // };
+
+  const GetDataFromSaga = async (e, props) => {
+    if (e.target.value.trim() !== "") {
+      props.getSearchResults(e.target.value);
+    }
   };
 
   return (
     <div className="search-container">
-      <form onSubmit={onSubmitSearch}>
+      <form>
         <input
           type="text"
-          value={search}
           placeholder="type your movie.."
           name="search"
-          onChange={(e) => setSearch(e.target.value)}
+          onChange={(e) => GetDataFromSaga(e, props)}
         />
         <button type="submit">Submit</button>
       </form>
@@ -24,4 +33,8 @@ const Search = () => {
   );
 };
 
-export default Search;
+const mapDispatchToProps = {
+  getSearchResults,
+};
+
+export default connect(null, mapDispatchToProps)(Search);
