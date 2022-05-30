@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Search from "./Search";
-
+import { DiJsBadge } from "react-icons/di";
 //style should be imported from another file
 const HeaderWrapper = styled.header`
   display: flex;
@@ -9,7 +9,7 @@ const HeaderWrapper = styled.header`
   flex-wrap: wrap;
   height: 90px;
   width: 100%;
-  background: #96c0b7;
+  background: teal;
   @media screen and (max-width: 1183px) {
     height: 100%;
   }
@@ -17,36 +17,16 @@ const HeaderWrapper = styled.header`
     height: 150px;
   }
 `;
-// const HeaderText = styled.h1`
-//   margin: 6px 0 0 0;
-//   font-size: 26px;
-//   font-weight: 300;
-//   color: #f4f4f4;
-//   opacity: 0.93;
-//   &:hover {
-//     opacity: 1;
-//   }
-// `;
+
 const HeaderLogoWrapper = styled.div`
   display: flex;
   align-items: center;
-  width: 25%;
+  margin-left: 150px;
   @media screen and (max-width: 1183px) {
     margin: 0 auto;
     margin-top: 13px;
     width: 300px;
   }
-`;
-const HeaderLogoButton = styled.button`
-  display: flex;
-  align-items: center;
-  border: none;
-  margin: 0;
-  padding: 0;
-  background: transparent;
-  font: inherit;
-  outline: none;
-  cursor: pointer;
 `;
 
 const Header = () => {
@@ -54,10 +34,7 @@ const Header = () => {
     <>
       <HeaderWrapper>
         <HeaderLogoWrapper>
-          <HeaderLogoButton>
-            {/* <HeaderLogo src="" alt="logo" /> */}
-            {/* <HeaderText>Movies App</HeaderText> */}
-          </HeaderLogoButton>
+          <DiJsBadge />
         </HeaderLogoWrapper>
         <Search />
       </HeaderWrapper>

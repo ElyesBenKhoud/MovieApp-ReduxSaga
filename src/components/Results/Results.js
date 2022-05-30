@@ -1,15 +1,14 @@
 import React from "react";
 import { connect } from "react-redux";
 import RenderResult from "./RenderResult";
+import { VscCheck, VscChromeClose } from "react-icons/vsc";
 
 const Results = (props) => {
   //received the searchResults from the state as props
-  console.log(props);
-
   if (props.searchResults) {
     return (
       <>
-        <h2> Here goes the searched movies</h2>
+        {!renderSearchResults ? <VscCheck /> : <VscChromeClose />}
         {renderSearchResults(props.searchResults)}
       </>
     );

@@ -13,6 +13,7 @@ export const initial_state = {
 export const movies = initial_state.movies;
 
 const MovieReducer = (state = initial_state, action) => {
+  console.log(action);
   switch (action.type) {
     case LOAD_MOVIE_REQUESTED: {
       return {

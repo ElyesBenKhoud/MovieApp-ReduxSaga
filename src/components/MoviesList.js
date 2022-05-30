@@ -41,6 +41,7 @@ const Img = styled.img`
   height: 100%;
   width: 80%;
 `;
+
 const MoviesList = () => {
   const dispatch = useDispatch();
 
