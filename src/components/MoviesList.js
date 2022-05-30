@@ -53,6 +53,7 @@ const MoviesList = () => {
   const state = useSelector((state) => ({ ...state.app }));
   const state2 = useSelector((state) => ({ ...state.app2 }));
   // console.log(searchedMovies);
+
   const SagasMovies = state.loading ? (
     <h6>Data is Loading ... </h6>
   ) : (
