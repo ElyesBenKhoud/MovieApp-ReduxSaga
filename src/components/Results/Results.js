@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import RenderResult from "./RenderResult";
 
 const Results = (props) => {
+  //received the searchResults from the state as props
   console.log(props);
 
   if (props.searchResults) {
