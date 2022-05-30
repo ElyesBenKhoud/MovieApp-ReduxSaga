@@ -2,13 +2,12 @@ import React from "react";
 import { connect } from "react-redux";
 import RenderResult from "./RenderResult";
 import { VscCheck, VscChromeClose } from "react-icons/vsc";
-
 const Results = (props) => {
   //received the searchResults from the state as props
   if (props.searchResults) {
     return (
       <>
-        {!renderSearchResults ? <VscCheck /> : <VscChromeClose />}
+        {!"" ? <VscCheck /> : <VscChromeClose />}
         {renderSearchResults(props.searchResults)}
       </>
     );
@@ -28,4 +27,5 @@ const mapStateToProps = (state) => {
     searchResults: state.searchReducer.get("searchResults"),
   };
 };
+
 export default connect(mapStateToProps)(Results);

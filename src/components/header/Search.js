@@ -20,7 +20,6 @@ const Search = (props) => {
           name="search"
           onChange={(e) => GetDataFromSaga(e, props)}
         />
-        <button type="submit">Submit</button>
       </form>
     </div>
   );
