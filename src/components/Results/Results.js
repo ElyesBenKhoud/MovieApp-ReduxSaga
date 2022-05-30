@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import RenderResult from "./RenderResult";
+
 const Results = (props) => {
   console.log(props);
 
@@ -12,7 +13,6 @@ const Results = (props) => {
       </>
     );
   }
-
   return null;
 };
 

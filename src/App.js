@@ -12,7 +12,7 @@ function App() {
         <div className="panel">
           <Results />
         </div>
-        <div className="panel2">
+        <div className="panel">
           <MoviesList />
         </div>
       </div>

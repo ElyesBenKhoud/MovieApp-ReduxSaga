@@ -14,6 +14,7 @@ const Movie = styled.div`
 `;
 
 const Row = styled.div`
+  float: left;
   width: 25%;
   @media screen and (max-width: 1175px) {
     width: 70%;
