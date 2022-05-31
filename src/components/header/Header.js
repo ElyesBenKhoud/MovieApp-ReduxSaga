@@ -34,7 +34,7 @@ const Header = () => {
     <>
       <HeaderWrapper>
         <HeaderLogoWrapper>
-          <DiJsBadge />
+          <DiJsBadge onClick={() => window.location.reload(false)} />
         </HeaderLogoWrapper>
         <Search />
       </HeaderWrapper>
