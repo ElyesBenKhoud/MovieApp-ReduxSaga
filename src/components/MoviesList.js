@@ -84,14 +84,14 @@ const MoviesList = () => {
   return (
     <>
       <h4>
-        First Saga call <VscCheck />
+        First Saga call <VscCheck /> Action Movies :
       </h4>
 
       <Movie>{SagasMovies}</Movie>
       <br />
       <h4>
         {" "}
-        Second Saga call <VscCheck />
+        Second Saga call <VscCheck /> Love Movies :
       </h4>
       <Movie>{SagasOtherMovies}</Movie>
     </>
