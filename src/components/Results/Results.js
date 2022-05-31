@@ -7,7 +7,15 @@ const Results = (props) => {
   if (props.searchResults) {
     return (
       <>
-        {props.searchResults.length <= 0 ? <VscChromeClose /> : <VscCheck />}
+        {props.searchResults.length <= 0 ? (
+          <h4>
+            <VscChromeClose /> Type and search for your movie ...{" "}
+          </h4>
+        ) : (
+          <h4>
+            <VscCheck /> Here your desired movie:
+          </h4>
+        )}
         {renderSearchResults(props.searchResults)}
       </>
     );

@@ -3,6 +3,8 @@ import styled from "styled-components";
 import { useDispatch, useSelector } from "react-redux";
 import { LoadMovie } from "../redux/SagaMovies/action";
 import { LoadOtherMovies } from "../redux/OtherMovies/action";
+import { VscCheck, VscChromeClose } from "react-icons/vsc";
+
 //again some style should be imported from another files...
 const Movie = styled.div`
   overflow-x: auto;
@@ -56,7 +58,7 @@ const MoviesList = () => {
   // console.log(searchedMovies);
 
   const SagasMovies = state.loading ? (
-    <h6>Data is Loading ... </h6>
+    <VscChromeClose />
   ) : (
     state.movies.map((item, idx) => (
       <Row key={idx}>
@@ -68,7 +70,7 @@ const MoviesList = () => {
   );
 
   const SagasOtherMovies = state2.loading ? (
-    <h6>Data is Loading ... </h6>
+    <VscChromeClose />
   ) : (
     state2.movies.map((item, idx) => (
       <Row key={idx}>
@@ -81,10 +83,16 @@ const MoviesList = () => {
 
   return (
     <>
-      <h2> First Saga call</h2>
+      <h4>
+        First Saga call <VscCheck />
+      </h4>
+
       <Movie>{SagasMovies}</Movie>
       <br />
-      <h2> Second Saga call</h2>
+      <h4>
+        {" "}
+        Second Saga call <VscCheck />
+      </h4>
       <Movie>{SagasOtherMovies}</Movie>
     </>
   );
