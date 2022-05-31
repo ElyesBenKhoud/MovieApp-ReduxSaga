@@ -7,7 +7,7 @@ const Results = (props) => {
   if (props.searchResults) {
     return (
       <>
-        {!"" ? <VscCheck /> : <VscChromeClose />}
+        {props.searchResults.length <= 0 ? <VscChromeClose /> : <VscCheck />}
         {renderSearchResults(props.searchResults)}
       </>
     );

@@ -38,6 +38,7 @@ const Img = styled.img`
   height: 100%;
   width: 80%;
 `;
+
 const RenderResult = ({ result }) => {
   //   console.log(result.toJS().Title);
 
