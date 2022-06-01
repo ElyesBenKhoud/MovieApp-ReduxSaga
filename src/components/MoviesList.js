@@ -57,16 +57,20 @@ const MoviesList = () => {
   const state2 = useSelector((state) => ({ ...state.app2 }));
   // console.log(searchedMovies);
 
-  const SagasMovies = state.loading ? (
-    <VscChromeClose />
-  ) : (
-    state.movies.map((item, idx) => (
-      <Row key={idx}>
-        <Card>
-          <Img src={item.Poster} alt={item.Title} />
-        </Card>
-      </Row>
-    ))
+  const SagasMovies = useMemo(
+    () =>
+      state.loading ? (
+        <VscChromeClose />
+      ) : (
+        state.movies.map((item, idx) => (
+          <Row key={idx}>
+            <Card>
+              <Img src={item.Poster} alt={item.Title} />
+            </Card>
+          </Row>
+        ))
+      ),
+    [state.movies, state.loading]
   );
 
   const SagasOtherMovies = useMemo(

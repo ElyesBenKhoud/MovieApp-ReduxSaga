@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo } from "react";
 import styled from "styled-components";
 
 const Movie = styled.div`
@@ -42,12 +42,15 @@ const Img = styled.img`
 const RenderResult = ({ result }) => {
   //   console.log(result.toJS().Title);
 
-  const renderedList = (
-    <Row>
-      <Card>
-        <Img src={result.toJS().Poster} alt={result.toJS().Title} />
-      </Card>
-    </Row>
+  const renderedList = useMemo(
+    () => (
+      <Row>
+        <Card>
+          <Img src={result.toJS().Poster} alt={result.toJS().Title} />
+        </Card>
+      </Row>
+    ),
+    [result]
   );
 
   return (
