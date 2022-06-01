@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useMemo } from "react";
 import styled from "styled-components";
 import { useDispatch, useSelector } from "react-redux";
 import { LoadMovie } from "../redux/SagaMovies/action";
@@ -69,16 +69,20 @@ const MoviesList = () => {
     ))
   );
 
-  const SagasOtherMovies = state2.loading ? (
-    <VscChromeClose />
-  ) : (
-    state2.movies.map((item, idx) => (
-      <Row key={idx}>
-        <Card>
-          <Img src={item.Poster} alt={item.Title} />
-        </Card>
-      </Row>
-    ))
+  const SagasOtherMovies = useMemo(
+    () =>
+      state2.loading ? (
+        <VscChromeClose />
+      ) : (
+        state2.movies.map((item, idx) => (
+          <Row key={idx}>
+            <Card>
+              <Img src={item.Poster} alt={item.Title} />
+            </Card>
+          </Row>
+        ))
+      ),
+    [state2.movies, state2.loading]
   );
 
   return (
