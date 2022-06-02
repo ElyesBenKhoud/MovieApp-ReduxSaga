@@ -1,9 +1,9 @@
 
 body{
     font-family: 'Muli', sans-serif;
-    /* display:flex;
+    display:flex;
     align-items: center;
-    justify-content: center; */
+    justify-content: center;
 
 }
 
@@ -19,7 +19,7 @@ body{
     background-color: teal;
     height:100%;
     border-radius: 10px;
-    flex:1 ;
+    flex:0.5;
     position:relative;
     transition: flex 0.5s ease-in;
     color:rgb(0, 0, 0);

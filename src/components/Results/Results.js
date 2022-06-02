@@ -4,8 +4,6 @@ import RenderResult from "./RenderResult";
 import { VscCheck, VscChromeClose } from "react-icons/vsc";
 
 const Results = (props) => {
-  // console.log(props.getSearchResults);
-  //received the searchResults from the state as props
   if (props.searchResults) {
     return (
       <>

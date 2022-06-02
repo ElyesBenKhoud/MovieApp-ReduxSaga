@@ -40,8 +40,6 @@ const Img = styled.img`
 `;
 
 const RenderResult = ({ result }) => {
-  //   console.log(result.toJS().Title);
-
   const renderedList = useMemo(
     () => (
       <Row>
