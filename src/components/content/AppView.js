@@ -3,6 +3,27 @@ import MoviesList from "../MoviesList";
 import Results from "../Results/Results";
 import "../../App.css";
 import { useState } from "react";
+import styled from "styled-components";
+const Button = styled.button`
+  background: black;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  height: 40px;
+  width: 110px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  &:hover {
+    background: white;
+    color: black;
+  }
+  media screen and (max-width: 740px) {
+    position: absolute;
+    right: 0;
+    margin-right: 0;
+    margin-top: 0;
+  }
+`;
 const AppView = () => {
   const [admin, setAdmin] = useState(false);
   const ChangeAdmin = () => {
@@ -11,9 +32,9 @@ const AppView = () => {
   return (
     <>
       {!admin ? (
-        <button onClick={ChangeAdmin}> Connect to access movies</button>
+        <Button onClick={ChangeAdmin}> Connect</Button>
       ) : (
-        <button onClick={ChangeAdmin}> Disconnect</button>
+        <Button onClick={ChangeAdmin}> Disconnect</Button>
       )}
 
       {admin ? (
