@@ -1,5 +1,5 @@
 .search-container {
-    padding: 30px;
+    padding: 20px;
 }
   
 input[type=text] {
@@ -13,17 +13,20 @@ input[type=text] {
   @media screen and (max-width: 575px) {
     .search-container {
       float: right;
-      width: 30vw;
-      max-height: 3vh;
+      width: 35vw;
+      max-height: 4vh;
       margin-right: 20px;
     }
-   input[type=text], .search-container  {
+   input[type=text] {
       float: right;
       display: flex;
       flex-direction: row-reverse;
       text-align: left;
-      width: 30vw;
+      width: 35vw;
       max-height: 3vh;
+      font-size: 17px;
+      border: none;
+      margin-left: 245px;
     }
    input[type=text] {
       border: 1px solid #ccc;  
