@@ -40,14 +40,14 @@ const Buttonet = styled.div`
 `;
 
 const AppView = (props) => {
-  const [admin, setAdmin] = useState(false);
+  const [admin, setAdmin] = useState(null);
   const ChangeAdmin = () => {
     setAdmin(!admin);
   };
   return (
     <>
       <Buttonet>
-        {console.log(props)}
+        {console.log(props.isAdmin)}
         {!admin ? (
           <Button onClick={ChangeAdmin}> Connect</Button>
         ) : (
