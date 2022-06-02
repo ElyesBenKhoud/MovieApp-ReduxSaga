@@ -31,6 +31,13 @@ const Button = styled.button`
     margin-top: 0;
   }
 `;
+const Buttonet = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+`;
+
 const AppView = () => {
   const [admin, setAdmin] = useState(false);
   const ChangeAdmin = () => {
@@ -38,13 +45,14 @@ const AppView = () => {
   };
   return (
     <>
-      <AppViewStyle>
+      <Buttonet>
         {!admin ? (
           <Button onClick={ChangeAdmin}> Connect</Button>
         ) : (
           <Button onClick={ChangeAdmin}> Disconnect</Button>
         )}
-
+      </Buttonet>
+      <AppViewStyle>
         {admin ? (
           <div className="container">
             <div className="panel">

@@ -19,7 +19,7 @@ body{
     background-color: teal;
     height:100%;
     border-radius: 10px;
-    flex:0.5;
+    flex:1 ;
     position:relative;
     transition: flex 0.5s ease-in;
     color:rgb(0, 0, 0);
