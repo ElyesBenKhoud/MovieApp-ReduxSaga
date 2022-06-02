@@ -4,6 +4,7 @@ import Results from "../Results/Results";
 import "../../App.css";
 import { useState } from "react";
 import styled from "styled-components";
+import { connect } from "react-redux";
 
 const AppViewStyle = styled.div`
   display: flex;
@@ -38,7 +39,7 @@ const Buttonet = styled.div`
   align-items: center;
 `;
 
-const AppView = () => {
+const AppView = (props) => {
   const [admin, setAdmin] = useState(false);
   const ChangeAdmin = () => {
     setAdmin(!admin);
@@ -46,6 +47,7 @@ const AppView = () => {
   return (
     <>
       <Buttonet>
+        {console.log(props)}
         {!admin ? (
           <Button onClick={ChangeAdmin}> Connect</Button>
         ) : (
@@ -70,4 +72,10 @@ const AppView = () => {
   );
 };
 
-export default AppView;
+const mapStateToProps = (state) => {
+  return {
+    isAdmin: state.app.isAdmin,
+  };
+};
+
+export default connect(mapStateToProps)(AppView);

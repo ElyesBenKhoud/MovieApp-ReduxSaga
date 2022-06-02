@@ -8,9 +8,10 @@ export const initial_state = {
   movies: [],
   loading: true,
   error: null,
+  isAdmin: false,
 };
 
-export const movies = initial_state.movies;
+// export const movies = initial_state.movies;
 
 const MovieReducer = (state = initial_state, action) => {
   console.log(action);
@@ -35,6 +36,12 @@ const MovieReducer = (state = initial_state, action) => {
         ...state,
         loading: false,
         error: message,
+      };
+    }
+    case "SET_ADMIN": {
+      return {
+        ...state,
+        isAdmin: action.isAdmin,
       };
     }
 

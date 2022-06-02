@@ -17,3 +17,8 @@ export const LoadMovieFail = (message) => ({
   type: LOAD_MOVIE_FAIL,
   message,
 });
+
+export const SetAdmin = (isAdmin) => ({
+  type: "SET_ADMIN",
+  isAdmin,
+});
