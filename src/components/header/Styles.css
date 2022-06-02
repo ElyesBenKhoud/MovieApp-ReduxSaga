@@ -8,37 +8,28 @@ input[type=text] {
     font-size: 17px;
     border: none;
   }
+
   
- .search-container button {
-    float: right;
-    padding: 6px;
-    margin-top:8px;
-    margin-right: 16px;
-    background: #ddd;
-    font-size: 17px;
-    border: none;
-    cursor: pointer;
-  }
-  
-   .search-container button:hover {
-    background: #ccc;
-  }
-  
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 575px) {
     .search-container {
-      float: none;
+      float: right;
+      width: 30vw;
+      max-height: 3vh;
+      margin-right: 20px;
     }
-   input[type=text], .search-container button {
-      float: none;
-      display: block;
+   input[type=text], .search-container  {
+      float: right;
+      display: flex;
+      flex-direction: row-reverse;
       text-align: left;
-      width: 100%;
-      margin: 0;
-      padding: 14px;
+      width: 30vw;
+      max-height: 3vh;
     }
    input[type=text] {
       border: 1px solid #ccc;  
     }
   }
+
+
 
 

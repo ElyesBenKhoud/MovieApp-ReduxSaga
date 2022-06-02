@@ -4,6 +4,13 @@ import Results from "../Results/Results";
 import "../../App.css";
 import { useState } from "react";
 import styled from "styled-components";
+
+const AppViewStyle = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+`;
 const Button = styled.button`
   background: black;
   color: white;
@@ -31,24 +38,26 @@ const AppView = () => {
   };
   return (
     <>
-      {!admin ? (
-        <Button onClick={ChangeAdmin}> Connect</Button>
-      ) : (
-        <Button onClick={ChangeAdmin}> Disconnect</Button>
-      )}
+      <AppViewStyle>
+        {!admin ? (
+          <Button onClick={ChangeAdmin}> Connect</Button>
+        ) : (
+          <Button onClick={ChangeAdmin}> Disconnect</Button>
+        )}
 
-      {admin ? (
-        <div className="container">
-          <div className="panel">
-            <Results />
+        {admin ? (
+          <div className="container">
+            <div className="panel">
+              <Results />
+            </div>
+            <div className="panel">
+              <MoviesList />
+            </div>
           </div>
-          <div className="panel">
-            <MoviesList />
-          </div>
-        </div>
-      ) : (
-        <h1>connect please</h1>
-      )}
+        ) : (
+          <h1>connect please</h1>
+        )}
+      </AppViewStyle>
     </>
   );
 };
